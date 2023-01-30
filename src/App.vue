@@ -1,46 +1,35 @@
 <script setup>
-
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <div>Hello World</div>
+    <div class="links">
+        <RouterLink to="/" active-class="active">Home</RouterLink>
+        <div class="right-panel">
+            <RouterLink to="/about" active-class="active">About</RouterLink>
+            <RouterLink to="/contact-us" active-class="active" class="contact">Contact Us</RouterLink>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <RouterView />
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
+.active {
+  color: rgb(24, 155, 24);
+  font-weight: bold;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+a {
+    color: #a5921d;
+}
+a.contact {
+    padding-left: 10px;
+}
+p{
+    text-align: inherit;
 }
 </style>
