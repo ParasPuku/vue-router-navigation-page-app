@@ -8,8 +8,8 @@ const { showroom, contact, city, pincode, state, country } = route.query;
 console.log(showroom, contact, city, pincode, state, country)
 </script>
 <template>
-    <div>
-        <h2><b>Name: </b> {{ showroom }}</h2>
+    <div class="showroom-contact">
+        <h2 class="showroom-name">{{ showroom }}</h2>
         <div><b>Mobile: </b>{{ contact }}</div>
         <div><b>City: </b>{{ city }}</div>
         <div><b>Pincode: </b>{{ pincode }}</div>
@@ -18,6 +18,11 @@ console.log(showroom, contact, city, pincode, state, country)
     </div>
 </template>
 
-<style>
-
+<style lang="less" scoped>
+.showroom-contact {
+    .showroom-name {
+        margin: 15px 0 20px;
+    }
+}
 </style>
+
